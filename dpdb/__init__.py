@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from flaskext.mysql import MySQL
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory,jsonify
+from flask import Flask, render_template, request,jsonify
 from InsertDataFromExcel import insertDataFromExcel
 import os
-import pygal
 import dropDown
 import graphing
 import showAndDelete
@@ -142,7 +141,7 @@ def drawLines():
     """
     stu_id = request.args.get('stu_id', 0, type=int)
     stu_text = request.args.get('stu_text')
-    print stu_id, stu_text
+    # print stu_id, stu_text
     try:
         db = mysql.connect()
         cursor = db.cursor()
@@ -177,7 +176,7 @@ def showItems():
     stu_id = request.args.get('stu_id', 0, type=int)
     coach_id = request.args.get('coach_id', 0, type=int)
     stu_text = request.args.get('stu_text')
-    print stu_id, stu_text
+    # print stu_id, stu_text
     try:
         db = mysql.connect()
         cursor = db.cursor()
@@ -189,7 +188,7 @@ def showItems():
                 newItem = []
                 for i in range(len(item)):
                     if i == 3:
-                        newItem.append(item[3].strftime('%Y.%m.%d'))
+                        newItem.append(item[3].strftime('%Y-%m-%d'))
                     else:
                         newItem.append(item[i])
                 newItems.append(newItem)

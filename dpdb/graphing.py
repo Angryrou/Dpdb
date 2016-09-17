@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import pygal
-from datetime import date
-from pygal.style import Style
 
 def graph_line_init():
     graph = []
@@ -28,7 +26,8 @@ def init():
 def draw(cursor, stu_id, stu_text, opt):
     """ accoding to the selected option in student_select, draw the student's 7 indexes."""
     graph_info = []
-    sql = "select weight, body_fat, chest_circumference_max, waistline_navel, hipline, WHR, thigh_circumference, " + opt + " from lesson where student_id = " + str(stu_id)
+    sql = ("select weight, body_fat, chest_circumference_max, waistline_navel, hipline, WHR, thigh_circumference, "
+           + opt + " from lesson where student_id = " + str(stu_id) + " order by " + opt)
     print sql
     cursor.execute(sql)
     results = cursor.fetchall()
