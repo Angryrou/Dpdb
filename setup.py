@@ -12,7 +12,8 @@ DATA_FILES = []
 OPTIONS = {
 	'argv_emulation': True,
 	'packages': ['jinja2', 'email'],
-    'includes': ['flask']
+    'includes': ['flask'],
+    'iconfile':'arrow.icns'
 }
 
 setup(
