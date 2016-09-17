@@ -82,8 +82,6 @@ Also, this is a gift for my friend Arrow. Hope this can make sense.
 
 1. 创建好数据库之后，在Mysql workbench中运行’sp_insertStuCoach.sql‘，’sp_inserData.sql‘两个脚本，将两个过程存储入数据库当中；
 2. 在点击进入上传界面时，点击‘选择文件’按钮，弹出对话框，选择excel(.xls, .xlsx)文件，可多选。点击‘上传’按钮，会弹出上传结果。若失败，则会输出错误信息；若上传成功，则会显示已上传的文件名，点击‘返回’可以返回至上一层。
-
-
 3. 采用pandas的dataframe对excel表格完整拉取，为了防止出现意外，在date三行进行全值判断，有空，则判断该行无效；
 
 
@@ -91,7 +89,9 @@ Also, this is a gift for my friend Arrow. Hope this can make sense.
 ## From Lyu
 This is from Lyu, my job is to get data from database and analysis the data and draw some graphs and export some data for user to ananlysis.
 
-Some details to be continue...
+### py2app 将python文件导出成了app
+- setuptools (19.2)
+- 配置文件详见 setup.py 
 
 
 > Lyu @ Luo:
